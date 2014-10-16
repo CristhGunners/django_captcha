@@ -1,0 +1,17 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title> Ejemplo de Captcha </title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+</head>
+<body>
+	<section>
+		{% block contenido %}{% endblock %}
+	</section>
+</body>
+</html>

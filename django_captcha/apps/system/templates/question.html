@@ -1,0 +1,10 @@
+{% extends 'base.html '%}
+
+{% block contenido %}
+	<a href="{% url 'home' %}"> Home </a>
+	<p>{{question.id}}</p>
+	<p>{{question.titulo}}</p>
+	<p>{{question.contenido}}</p>
+	<p>{{question.get_categoria_display}}</p>
+	
+{% endblock %}

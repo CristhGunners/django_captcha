@@ -1,0 +1,28 @@
+{% extends 'base.html '%}
+
+{% block contenido %}
+	<a href="{% url 'home' %}"> Home </a>
+	<h2> Agregar Pregunta </h2>
+	<form action="." method='POST'>
+		{% csrf_token %}
+		{{form}}
+		<button type="submit">Enviar</button>
+		<button type="button" class='js-captcha-refresh'> Refrescar </button>
+	</form>
+	<script type="text/javascript">
+		$(document).on('ready', function(){
+			$('.js-captcha-refresh').click(function(){
+				var $form = $(this).parents('form');
+		        var url = location.protocol + "//" + window.location.hostname + ":"
+		                  + location.port + "/captcha/refresh/";
+
+		        $.getJSON(url, {}, function(json) {
+		            $form.find('input[name="captcha_0"]').val(json.key);
+		            $form.find('img.captcha').attr('src', json.image_url);
+		        });
+
+				return false;
+			});
+		});
+	</script>
+{% endblock %}

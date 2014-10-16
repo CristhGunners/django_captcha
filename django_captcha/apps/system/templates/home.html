@@ -1,0 +1,13 @@
+{% extends 'base.html '%}
+
+{% block contenido %}
+		<div>
+			<a href="{% url 'home' %}">Inicio</a>
+			<a href="{% url 'preguta_nueva' %}">Pregunta Nueva</a>
+		</div>
+		<ul>
+			{% for quest in questions %}
+				<li><a href="{% url 'pregunta_detalle' quest.id %}">{{quest.titulo}}</a></li>
+			{% endfor %}
+		</ul>
+{% endblock %}

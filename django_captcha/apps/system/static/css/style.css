@@ -1,0 +1,32 @@
+* {
+	outline: none;
+}
+
+form {
+	border:5px solid #333;
+	text-align:  center;
+}
+
+form input,textarea,button,img,label {
+	display:block;
+	margin: 1em auto 0; 
+}
+
+form label {
+	color:#333;
+	font-size: 2em;
+}
+
+form input,textarea {
+	border:2px solid #00ACED;
+}
+
+form button {
+	border:0;
+	background: #00ACED;
+	font-size: 2em;
+	color: #FFF;
+	padding:  0.5em;
+	margin: 1em auto;
+	cursor: pointer;
+}
